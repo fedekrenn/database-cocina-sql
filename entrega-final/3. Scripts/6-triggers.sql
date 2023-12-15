@@ -1,27 +1,6 @@
 --------------------------
 -- Creación de Triggers --
 
-
--- Tabla de log para la tabla "receta"
-CREATE TABLE IF NOT EXISTS log_receta (
-    `id_log` INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
-    `operacion` VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
-    `usuario` VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
-    `fecha` DATE NOT NULL COMMENT 'Fecha de la operación',
-    `hora` TIME NOT NULL COMMENT 'Hora de la operación',
-    PRIMARY KEY (`id_log`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de log para la tabla receta';
-
--- Tabla de log para la tabla "cocinero"
-CREATE TABLE IF NOT EXISTS log_cocinero (
-    `id_log` INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
-    `operacion` VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
-    `usuario` VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
-    `fecha` DATE NOT NULL COMMENT 'Fecha de la operación',
-    `hora` TIME NOT NULL COMMENT 'Hora de la operación',
-    PRIMARY KEY (`id_log`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de log para la tabla cocinero';
-
 -- Trigger AFTER para la tabla "receta"
 DROP TRIGGER IF EXISTS trg_receta_insert;
 DELIMITER //

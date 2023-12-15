@@ -30,7 +30,7 @@ VALUES
     ('La Trattoria', 'Calle de la Rosa 123', 4.2),
     ('El Bistró Parisien', 'Avenida de los Arcos 456', 4.5),
     ('Ristorante Bella Italia', 'Plaza del Sol 789', 3.8),
-    ('La Casa del Sabor', 'Calle Principal 234', 4.0),
+    ('La Casa del Sabor', 'Calle Principal 234', 4),
     ('The Garden Grill', 'Avenida de las Flores 567', 4.7),
     ('Sabor Mexicano', 'Calle de la Luna 890', 3.5),
     ('Le Petit Café', 'Calle de los Sueños 123', 4.8),
@@ -40,7 +40,7 @@ VALUES
     ('La Pizzeria Italiana', 'Avenida del Gusto 567', 4.6),
     ('Burger Haven', 'Calle de las Hamburguesas 890', 3.7),
     ('Thai Spice', 'Avenida de los Sabores 123', 4.3),
-    ('Steakhouse Grill', 'Calle de las Carnes 456', 4.0),
+    ('Steakhouse Grill', 'Calle de las Carnes 456', 4),
     ('Fusion Flavors', 'Avenida del Sabor 789', 3.6);
 
 -- Cocineros
@@ -82,76 +82,93 @@ VALUES
     ('Pizza de palmitos', 'Deliciosa pizza de palmitos con salsa de tomate y queso derretido', 4, 15, 123456789);
 
 -- Proveedores
-INSERT INTO proveedor (email, nombre, apellido, direccion, telefono, id_categoria)
+INSERT INTO proveedor
 VALUES
-    ('proveedor1@email.com', 'Juan', 'Gómez', 'Calle A 123', 555123456, 1),
-    ('proveedor2@email.com', 'Ana', 'López', 'Avenida B 456', 555234567, 2),
-    ('proveedor3@email.com', 'Carlos', 'Martínez', 'Calle C 789', 555345678, 3),
-    ('proveedor4@email.com', 'Luisa', 'Hernández', 'Avenida D 101', 555456789, 6),
-    ('proveedor5@email.com', 'Maria', 'Rodríguez', 'Calle E 202', 555567890, 10),
-    ('proveedor6@email.com', 'Pedro', 'Sánchez', 'Avenida F 303', 555678901, 2),
-    ('proveedor7@email.com', 'Sofía', 'Gómez', 'Calle G 404', 555789012, 7),
-    ('proveedor8@email.com', 'Andrés', 'Pérez', 'Avenida H 505', 555890123, 6),
-    ('proveedor9@email.com', 'Laura', 'Fernández', 'Calle I 606', 555901234, 1),
-    ('proveedor10@email.com', 'Eduardo', 'Vargas', 'Avenida J 707', 555012345, 3),
-    ('proveedor11@email.com', 'Isabel', 'Torres', 'Calle K 808', 555123456, 10),
-    ('proveedor12@email.com', 'Javier', 'Díaz', 'Avenida L 909', 555234567, 9),
-    ('proveedor13@email.com', 'Carmen', 'Ruiz', 'Calle M 1010', 555345678, 6),
-    ('proveedor14@email.com', 'Lorenzo', 'Molina', 'Avenida N 1111', 555456789, 9),
-    ('proveedor15@email.com', 'Rosa', 'Jiménez', 'Calle O 1212', 555567890, 4);
+    (987654, 'Juan', 'Gómez', 'Calle A 123', 555123456, 1),
+    (876543, 'Ana', 'López', 'Avenida B 456', 555234567, 2),
+    (789012, 'Carlos', 'Martínez', 'Calle C 789', 555345678, 3),
+    (654321, 'Luisa', 'Hernández', 'Avenida D 101', 555456789, 6),
+    (567890, 'Maria', 'Rodríguez', 'Calle E 202', 555567890, 10),
+    (678901, 'Pedro', 'Sánchez', 'Avenida F 303', 555678901, 2),
+    (890123, 'Sofía', 'Gómez', 'Calle G 404', 555789012, 7),
+    (901234, 'Andrés', 'Pérez', 'Avenida H 505', 555890123, 6),
+    (345678, 'Laura', 'Fernández', 'Calle I 606', 555901234, 1),
+    (456789, 'Eduardo', 'Vargas', 'Avenida J 707', 555012345, 3),
+    (234567, 'Isabel', 'Torres', 'Calle K 808', 555123456, 10),
+    (543210, 'Javier', 'Díaz', 'Avenida L 909', 555234567, 9),
+    (876210, 'Carmen', 'Ruiz', 'Calle M 1010', 555345678, 6),
+    (678120, 'Lorenzo', 'Molina', 'Avenida N 1111', 555456789, 9),
+    (567801, 'Rosa', 'Jiménez', 'Calle O 1212', 555567890, 4);
 
 -- Ingredientes
-INSERT INTO ingrediente (cantidad, nombre, email_proveedor, id_receta)
+INSERT INTO ingrediente (precio, nombre, codigo_proveedor)
 VALUES
-    (100, 'Harina de Trigo', 'proveedor1@email.com', 10),
-    (50, 'Aceite de Oliva Extra Virgen', 'proveedor7@email.com', 2),
-    (200, 'Carne de Res', 'proveedor3@email.com', 2),
-    (150, 'Salmón Fresco', 'proveedor8@email.com', 10),
-    (30, 'Tomates', 'proveedor5@email.com', 6),
-    (5, 'Levadura', 'proveedor6@email.com', 6),
-    (80, 'Cebolla', 'proveedor5@email.com', 7),
-    (10, 'Vino Tinto', 'proveedor10@email.com', 8),
-    (120, 'Ajo', 'proveedor5@email.com', 9),
-    (25, 'Queso Parmesano', 'proveedor1@email.com', 1),
-    (40, 'Pasta de Spaghetti', 'proveedor14@email.com', 11),
-    (70, 'Pimientos Rojos', 'proveedor5@email.com', 10),
-    (300, 'Pollo', 'proveedor3@email.com', 8),
-    (15, 'Pasta Filo', 'proveedor14@email.com', 1),
-    (180, 'Calabacines', 'proveedor5@email.com', 1);
-    
+    (1327, 'Harina de Trigo', 987654),
+    (6710, 'Aceite de Oliva Extra Virgen', 890123),
+    (6999.99, 'Bola de lomo', 789012),
+    (8500, 'Salmón Ahumado', 901234),
+    (500, 'Tomates', 567890),
+    (2900, 'Levadura', 678901),
+    (300, 'Cebolla', 567890),
+    (2590.99, 'Vino Tinto', 456789),
+    (299.50, 'Ajo', 567890),
+    (4199.49, 'Queso Parmesano', 987654),
+    (1199.50, 'Fideos', 678120),
+    (2400.99, 'Pimientos Rojos', 567890),
+    (4000, 'Pollo', 789012),
+    (670, 'Cebolla de verdeo', 678120),
+    (999.99, 'Calabacines', 567890);
+
+-- Relaciones de ingredientes en recetas
+INSERT INTO receta_ingrediente (id_receta, id_ingrediente, cantidad)
+VALUES
+    (1, 1, 100), (1, 2, 50), (1, 3, 200),
+    (2, 4, 150), (2, 5, 30), (2, 6, 5),
+    (3, 7, 80), (3, 8, 10), (3, 9, 120),
+    (4, 10, 25), (4, 11, 40), (4, 12, 70),
+    (5, 13, 70), (5, 14, 100), (5, 15, 200),
+    (6, 1, 120), (6, 5, 40), (6, 10, 80),
+    (7, 3, 180), (7, 7, 90), (7, 14, 25),
+    (8, 8, 70), (8, 11, 30), (8, 15, 150),
+    (9, 2, 60), (9, 6, 15), (9, 9, 100),
+    (10, 4, 130), (10, 12, 45), (10, 13, 200),
+    (11, 3, 80), (11, 5, 25), (11, 8, 60),
+    (12, 2, 40), (12, 7, 70), (12, 14, 120),
+    (13, 1, 100), (13, 11, 35), (13, 13, 180),
+    (14, 9, 55), (14, 12, 25), (14, 15, 90),
+    (15, 4, 75), (15, 6, 10), (15, 10, 110);
 
 -----------------------------------------------
--- Ejercicio 1 - Eliminación de registros en la tabla Ingredientes
+-- Ejercicio 1 - Eliminación de registros en la tabla Receta
 START TRANSACTION;
-DELETE FROM ingrediente WHERE id_ingrediente in (1, 2, 3, 4, 5); -- Eliminamos 5 registros
+DELETE FROM receta WHERE id_receta in (1, 2, 3, 4, 5); -- Eliminamos 5 registros
 
-SELECT * FROM ingrediente;
-
-ROLLBACK; -- Comentado por pedido de la consigna, descomentar para deshacer la eliminación
+SELECT * FROM receta;
+ROLLBACK; -- Volver atrás con la transacción
 COMMIT; -- Confirmar la operación
-
+SELECT * FROM receta;
 -----------------------------------------------
 -- Ejercicio 2 - Inserción de nuevos registros en la tabla Proveedor
 START TRANSACTION;
-INSERT INTO proveedor (email, nombre, apellido, direccion, telefono, id_categoria)
+INSERT INTO proveedor
 VALUES
-    ('proveedor16@email.com', 'Raúl', 'Gutiérrez', 'Calle P 1313', 555234567, 5),
-    ('proveedor17@email.com', 'Mónica', 'Santos', 'Avenida Q 1414', 555345678, 8),
-    ('proveedor18@email.com', 'Martín', 'Luna', 'Calle R 1515', 555456789, 4),
-    ('proveedor19@email.com', 'Natalia', 'Reyes', 'Avenida S 1616', 555567890, 9);
+    (768543, 'Raúl', 'Gutiérrez', 'Calle P 1313', 555234567, 5),
+    (234568, 'Mónica', 'Santos', 'Avenida Q 1414', 555345678, 8),
+    (992232, 'Martín', 'Luna', 'Calle R 1515', 555456789, 4),
+    (123123, 'Natalia', 'Reyes', 'Avenida S 1616', 555567890, 9);
 SAVEPOINT despues_de_insertar_4;
 
-INSERT INTO proveedor (email, nombre, apellido, direccion, telefono, id_categoria)
+INSERT INTO proveedor (codigo, nombre, apellido, direccion, telefono, id_categoria)
 VALUES
-    ('proveedor20@email.com', 'Óscar', 'Morales', 'Calle T 1717', 555678901, 1),
-    ('proveedor21@email.com', 'Gloria', 'Ramírez', 'Calle U 1818', 555789012, 7),
-    ('proveedor22@email.com', 'Roberto', 'López', 'Avenida V 1919', 555890123, 3),
-    ('proveedor23@email.com', 'Cecilia', 'García', 'Calle W 2020', 555901234, 6);
+    (992845, 'Óscar', 'Morales', 'Calle T 1717', 555678901, 1),
+    (293454, 'Gloria', 'Ramírez', 'Calle U 1818', 555789012, 7),
+    (123456, 'Roberto', 'López', 'Avenida V 1919', 555890123, 3),
+    (923456, 'Cecilia', 'García', 'Calle W 2020', 555901234, 6);
 SAVEPOINT despues_de_insertar_8;
 
 SELECT * FROM proveedor;
 -- ROLLBACK TO despues_de_insertar_4;
 -- ROLLBACK TO despues_de_insertar_8;
 ROLLBACK;
-RELEASE SAVEPOINT despues_de_insertar_4; -- elimina el SAVEPOINT
+-- RELEASE SAVEPOINT despues_de_insertar_4;
 COMMIT;

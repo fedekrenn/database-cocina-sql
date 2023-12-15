@@ -1,5 +1,0 @@
-- La dificultad de la receta deberían ser una tabla aparte?
-- Algunas recetas tendrían que ser cargadas bajo un mismo dni de cocinero
-- Hacer una relación muchos a muchos para recetas-ingredientes
-- Mejorar los trigger para que den más data
-- La PK de proveedor debe ser numérico
