@@ -1,9 +1,8 @@
---------------------------------------
--- Creación de vistas --
+/* ----- Creación de vistas ----- */
 
 -- Datos de cocineros
 CREATE OR REPLACE VIEW vw_cocineros AS
-(SELECT cocinero.dni, cocinero.nombre, apellido, fecha_nacimiento, detalle_especialidad.nombre as especialidad, restaurante.nombre as restaurante
+(SELECT cocinero.dni, cocinero.nombre, apellido, fecha_ingreso, detalle_especialidad.nombre as especialidad, restaurante.nombre as restaurante
 FROM cocinero
 JOIN detalle_especialidad
 ON cocinero.id_especialidad = detalle_especialidad.id_especialidad
@@ -17,14 +16,6 @@ CREATE OR REPLACE VIEW vw_recetas_dificiles AS
 FROM receta 
 WHERE dificultad > (SELECT AVG(dificultad) FROM receta))
 ORDER BY dificultad DESC;
-
--- Recetas y cantidades de ingredientes
-CREATE OR REPLACE VIEW vw_recetas_ingredientes AS
-(SELECT receta.nombre as receta, ingrediente.nombre as ingrediente, concat(cantidad, ' g.') as cantidad
-FROM receta
-JOIN ingrediente
-ON receta.id_receta = ingrediente.id_receta
-ORDER BY receta.nombre);
 
 -- Restaurantes que preparan las comidas más rapidas (menos de 30 minutos)
 CREATE OR REPLACE VIEW vw_comidas_rapidas AS
@@ -48,9 +39,19 @@ ON cocinero.id_restaurante = restaurante.id_restaurante
 ORDER BY clasificacion DESC
 LIMIT 3);
 
--- Pruebas
-select * from vw_cocineros;
-select * from vw_recetas_dificiles;
-select * from vw_recetas_ingredientes;
-select * from vw_comidas_rapidas;
-select * from vw_top_cocineros;
+-- Recetas y cantidades de ingredientes
+CREATE OR REPLACE VIEW vw_recetas_ingredientes AS
+(SELECT receta.nombre as receta, ingrediente.nombre as ingrediente, concat(cantidad, ' g.') as cantidad
+FROM receta_ingrediente
+JOIN receta
+ON receta_ingrediente.id_receta = receta.id_receta
+JOIN ingrediente
+ON receta_ingrediente.id_ingrediente = ingrediente.id_ingrediente
+ORDER BY receta.nombre);
+
+/* ----- Pruebas ----- */
+-- SELECT * FROM vw_cocineros;
+-- SELECT * FROM vw_recetas_dificiles;
+-- SELECT * FROM vw_comidas_rapidas;
+-- SELECT * FROM vw_top_cocineros;
+-- SELECT * FROM vw_recetas_ingredientes;

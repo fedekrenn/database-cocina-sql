@@ -53,9 +53,15 @@ END;
 //
 DELIMITER ;
 
--- Pruebas
-INSERT INTO cocinero VALUES (17001900, 'Erica', 'Krenn', '1964-10-9', 4, 2);
-UPDATE receta SET dificultad = 4 WHERE id_receta = 6;
-
-SELECT * FROM log_cocinero;
-SELECT * FROM log_receta;
+-- Trigger de registro de eliminación para la tabla "cocinero"
+DROP TRIGGER IF EXISTS trg_cocinero_delete;
+DELIMITER //
+CREATE TRIGGER trg_cocinero_delete
+BEFORE DELETE ON cocinero
+FOR EACH ROW
+BEGIN
+    INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
+    VALUES ('DELETE', USER(), CURDATE(), CURTIME());
+END;
+//
+DELIMITER ;

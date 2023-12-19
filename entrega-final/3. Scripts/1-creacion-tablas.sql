@@ -1,6 +1,11 @@
+/* ----- Scrip inicial ----- */
+
 DROP SCHEMA IF EXISTS db_cocina_coder;
 CREATE SCHEMA IF NOT EXISTS db_cocina_coder;
 USE db_cocina_coder;
+
+
+/* ----- Creación de tablas ----- */
 
 -- Tabla Detalle Categoria
 CREATE TABLE IF NOT EXISTS detalle_categoria (
@@ -30,7 +35,7 @@ CREATE TABLE IF NOT EXISTS cocinero (
   `dni` INT NOT NULL COMMENT 'DNI del cocinero',
   `nombre` VARCHAR(45) NOT NULL COMMENT 'Nombre del cocinero',
   `apellido` VARCHAR(45) NOT NULL COMMENT 'Apellido del cocinero',
-  `fecha_nacimiento` DATE NOT NULL COMMENT 'Fecha de nacimiento',
+  `fecha_ingreso` DATE NOT NULL COMMENT 'Fecha de ingreso al restaurante',
   `id_especialidad` INT NOT NULL COMMENT 'Identificador de su especialidad',
   `id_restaurante` INT NOT NULL COMMENT 'Identificador del restaurante al que pertenece',
   PRIMARY KEY (`dni`),

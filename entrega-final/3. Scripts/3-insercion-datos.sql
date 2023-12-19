@@ -1,5 +1,4 @@
-------------------------------------------------------
--- Insersión de datos --
+/* ----- Insersión de datos ----- */
 
 -- Categorías para proveedores
 INSERT INTO detalle_categoria (nombre)
@@ -44,23 +43,23 @@ VALUES
     ('Fusion Flavors', 'Avenida del Sabor 789', 3.6);
 
 -- Cocineros
-INSERT INTO cocinero (dni, nombre, apellido, fecha_nacimiento, id_especialidad, id_restaurante)
+INSERT INTO cocinero (dni, nombre, apellido, fecha_ingreso, id_especialidad, id_restaurante)
 VALUES
-    (36706445, 'Juan', 'González', '1980-05-15', 4, 1),
-    (17001982, 'Ana', 'López', '1990-03-20', 2, 2),
-    (32145678, 'Carlos', 'Martínez', '1985-07-10', 1, 3),
-    (23444000, 'Luisa', 'Hernández', '1988-12-05', 3, 4),
-    (38982123, 'Maria', 'Rodríguez', '1987-09-25', 5, 5),
-    (15883228, 'Pedro', 'Sánchez', '1993-02-18', 1, 6),
-    (28992882, 'Sofía', 'Gómez', '1995-11-30', 2, 7),
-    (99229129, 'Andrés', 'Pérez', '1983-04-15', 4, 8),
-    (890123456, 'Laura', 'Fernández', '1989-06-28', 3, 9),
-    (453219876, 'Eduardo', 'Vargas', '1992-08-22', 5, 10),
-    (254321987, 'Isabel', 'Torres', '1991-10-12', 1, 11),
-    (987654321, 'Javier', 'Díaz', '1986-03-03', 2, 12),
-    (321987654, 'Carmen', 'Ruiz', '1984-07-08', 4, 13),
-    (456789123, 'Lorenzo', 'Molina', '1994-01-24', 5, 14),
-    (123456789, 'Rosa', 'Jiménez', '1981-09-14', 3, 15);
+    (36706445, 'Juan', 'González', '2010-05-15', 4, 1),
+    (17001982, 'Ana', 'López', '2018-03-20', 2, 2),
+    (32145678, 'Carlos', 'Martínez', '2020-07-10', 1, 3),
+    (23444000, 'Luisa', 'Hernández', '2012-12-05', 3, 4),
+    (38982123, 'Maria', 'Rodríguez', '1999-09-25', 5, 5),
+    (15883228, 'Pedro', 'Sánchez', '2021-02-18', 1, 6),
+    (28992882, 'Sofía', 'Gómez', '2020-11-30', 2, 7),
+    (99229129, 'Andrés', 'Pérez', '2017-04-15', 4, 8),
+    (890123456, 'Laura', 'Fernández', '2022-06-28', 3, 9),
+    (453219876, 'Eduardo', 'Vargas', '2009-08-22', 5, 10),
+    (254321987, 'Isabel', 'Torres', '2020-10-12', 1, 11),
+    (987654321, 'Javier', 'Díaz', '2003-03-03', 2, 12),
+    (321987654, 'Carmen', 'Ruiz', '2015-07-08', 4, 13),
+    (456789123, 'Lorenzo', 'Molina', '2017-01-24', 5, 14),
+    (123456789, 'Rosa', 'Jiménez', '2023-09-14', 3, 15);
 
 -- Recetas
 INSERT INTO receta (nombre, descripcion, dificultad, tiempo, dni_cocinero)
@@ -78,7 +77,7 @@ VALUES
     ('Chiles en Nogada', 'Plato mexicano de chiles poblanos rellenos de picadillo', 9, 90, 254321987),
     ('Coq au Vin', 'Clásico francés de pollo cocido en vino tinto con champiñones y cebollas', 9, 90, 987654321),
     ('Bruschetta', 'Tostadas italianas con tomate, albahaca y aceite de oliva', 3, 20, 321987654),
-    ('Tarta de Manzana', 'Deliciosa tarta de manzana con canela y azúcar', 5, 50, 456789123),
+    ('Tarta de Manzana', 'Deliciosa tarta de manzana con canela y azúcar', 5, 50, 123456789),
     ('Pizza de palmitos', 'Deliciosa pizza de palmitos con salsa de tomate y queso derretido', 4, 15, 123456789);
 
 -- Proveedores
@@ -138,17 +137,20 @@ VALUES
     (14, 9, 55), (14, 12, 25), (14, 15, 90),
     (15, 4, 75), (15, 6, 10), (15, 10, 110);
 
------------------------------------------------
--- Ejercicio 1 - Eliminación de registros en la tabla Receta
+
+
+/* ----- Sentencias TCL ----- */
+
+-- 1. Eliminación de registros en la tabla Receta
 START TRANSACTION;
 DELETE FROM receta WHERE id_receta in (1, 2, 3, 4, 5); -- Eliminamos 5 registros
 
-SELECT * FROM receta;
+-- SELECT * FROM receta;
 ROLLBACK; -- Volver atrás con la transacción
 COMMIT; -- Confirmar la operación
-SELECT * FROM receta;
------------------------------------------------
--- Ejercicio 2 - Inserción de nuevos registros en la tabla Proveedor
+-- SELECT * FROM receta;
+
+-- 2. Inserción de nuevos registros en la tabla Proveedor
 START TRANSACTION;
 INSERT INTO proveedor
 VALUES
@@ -166,7 +168,7 @@ VALUES
     (923456, 'Cecilia', 'García', 'Calle W 2020', 555901234, 6);
 SAVEPOINT despues_de_insertar_8;
 
-SELECT * FROM proveedor;
+-- SELECT * FROM proveedor;
 -- ROLLBACK TO despues_de_insertar_4;
 -- ROLLBACK TO despues_de_insertar_8;
 ROLLBACK;

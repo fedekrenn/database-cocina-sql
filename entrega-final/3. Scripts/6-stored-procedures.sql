@@ -1,5 +1,4 @@
------------------------------------
--- Creación de Stored Procedures --
+/* ----- Creación de Stored Procedures ----- */
 
 -- Stored Procedure para ordenar una tabla
 DROP PROCEDURE IF EXISTS sp_ordenar_tabla;
@@ -41,13 +40,11 @@ BEGIN
 END //
 DELIMITER ;
 
--- Pruebas de la primer stored procedure
-CALL sp_ordenar_tabla('cocinero', 'dni', 'ASC');
-CALL sp_ordenar_tabla('ingrediente', 'nombre', 'DESC');
-
--- Pruebas de la segunda stored procedure
-CALL sp_modificar_tabla(1, 'cocinero', "780012345, 'Martin', 'Galdamez', '1979-11-28', 3, 9", NULL); -- Para insertar
-CALL sp_modificar_tabla(2, 'cocinero', NULL, 'dni = 780012345'); -- Para eliminar
+/* ----- Pruebas ----- */
+-- CALL sp_ordenar_tabla('cocinero', 'dni', 'ASC');
+-- CALL sp_ordenar_tabla('ingrediente', 'nombre', 'DESC');
+-- CALL sp_modificar_tabla(1, 'cocinero', "780012345, 'Martin', 'Galdamez', '2021-11-28', 3, 9", NULL); -- Para insertar
+-- CALL sp_modificar_tabla(2, 'cocinero', NULL, 'dni = 780012345'); -- Para eliminar
 
 
 
