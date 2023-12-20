@@ -10,14 +10,14 @@ USE db_cocina_coder;
 -- Tabla Detalle Categoria
 CREATE TABLE IF NOT EXISTS detalle_categoria (
   id_categoria INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único de la categoría',
-  nombre VARCHAR(45) NOT NULL COMMENT 'Nombre de la categoría',
+  nombre VARCHAR(45) NOT NULL UNIQUE COMMENT 'Nombre de la categoría',
   PRIMARY KEY (id_categoria))
 ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla que contiene los datos de las distintas categorías de productos de un proveedor';
 
 -- Tabla Detalle Especialidad
 CREATE TABLE IF NOT EXISTS detalle_especialidad (
   id_especialidad INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único de la especialidad',
-  nombre VARCHAR(45) NOT NULL COMMENT 'Nombre de la especialidad',
+  nombre VARCHAR(45) NOT NULL UNIQUE COMMENT 'Nombre de la especialidad',
   PRIMARY KEY (id_especialidad))
 ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla que contiene los datos de las especialidades';
 
@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS receta (
   nombre VARCHAR(45) NOT NULL COMMENT 'Nombre de la receta',
   descripcion TEXT(300) NOT NULL COMMENT 'Descripcion de los pasos a seguir para realizar la receta',
   dificultad INT NOT NULL COMMENT 'Dificultad del 1 al 10',
+  cantidad_ingredientes INT NOT NULL DEFAULT 0 COMMENT 'Cantidad de ingredientes, un trigger lo actualizará',
   tiempo INT NOT NULL COMMENT 'Tiempo de preparacion en minutos',
   dni_cocinero INT NOT NULL COMMENT 'DNI del cocinero que prepara la receta',
   PRIMARY KEY (id_receta),
@@ -71,7 +72,7 @@ ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla que contiene los datos
 CREATE TABLE IF NOT EXISTS ingrediente (
   id_ingrediente INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del ingrediente',
   precio DECIMAL(10, 2) NOT NULL COMMENT 'Precio del producto',
-  nombre VARCHAR(45) NOT NULL COMMENT 'Nombre del ingrediente',
+  nombre VARCHAR(45) NOT NULL UNIQUE COMMENT 'Nombre del ingrediente',
   codigo_proveedor INT NOT NULL COMMENT 'Código único del proveedor que provee el ingrediente',
   PRIMARY KEY (id_ingrediente),
   CONSTRAINT fk_Ingrediente_Proveedor FOREIGN KEY (codigo_proveedor) REFERENCES proveedor (codigo))

@@ -1,6 +1,35 @@
 --------------------------
 -- Creación de Triggers --
 
+-- Trigger de actualización cantidad de ingredientes
+DROP TRIGGER IF EXISTS trg_sumar_cantidad_ingredientes;
+DELIMITER //
+CREATE TRIGGER trg_sumar_cantidad_ingredientes
+AFTER INSERT ON receta_ingrediente
+FOR EACH ROW
+BEGIN
+	UPDATE receta
+    SET cantidad_ingredientes = cantidad_ingredientes + 1
+    WHERE id_receta = NEW.id_receta;
+END;
+//
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS trg_restar_cantidad_ingredientes;
+DELIMITER //
+CREATE TRIGGER trg_restar_cantidad_ingredientes
+AFTER DELETE ON receta_ingrediente
+FOR EACH ROW
+BEGIN
+	UPDATE receta
+    SET cantidad_ingredientes = cantidad_ingredientes - 1
+    WHERE id_receta = OLD.id_receta;
+    -- INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
+    -- VALUES ('DELETE', USER(), CURDATE(), CURTIME());
+END;
+//
+DELIMITER ;
+
 -- Trigger AFTER para la tabla "receta"
 DROP TRIGGER IF EXISTS trg_receta_insert;
 DELIMITER //

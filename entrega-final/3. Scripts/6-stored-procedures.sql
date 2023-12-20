@@ -42,7 +42,7 @@ DELIMITER ;
 
 /* ----- Pruebas ----- */
 -- CALL sp_ordenar_tabla('cocinero', 'dni', 'ASC');
--- CALL sp_ordenar_tabla('ingrediente', 'nombre', 'DESC');
+-- CALL sp_ordenar_tabla('ingrediente', 'precio', 'DESC');
 -- CALL sp_modificar_tabla(1, 'cocinero', "780012345, 'Martin', 'Galdamez', '2021-11-28', 3, 9", NULL); -- Para insertar
 -- CALL sp_modificar_tabla(2, 'cocinero', NULL, 'dni = 780012345'); -- Para eliminar
 
