@@ -3,140 +3,308 @@
 -- Categorías para proveedores
 INSERT INTO detalle_categoria (nombre)
 VALUES
-    ('Especias y Condimentos'),
-    ('Pescado'),
-    ('Carnes rojas'),
-    ('Carnes blancas'),
+    ('Carnes'),
+    ('Enlatados'),
+    ('Especies y condimentos'),
+    ('Granos'),
     ('Lácteos'),
-    ('Verduras'),
-    ('Panes y repostería'),
-    ('Bebidas'),
-    ('Pastas y arroz'),
-    ('Enlatados');
+    ('Panadería'),
+    ('Pastas'),
+    ('Salsas'),
+    ('Verduras');
    
 -- Especialidades
 INSERT INTO detalle_especialidad (nombre)
 VALUES
 	('Cocina Mexicana'),
-    ('Cocina Francesa'),
+    ('Comida Rápida'),
     ('Cocina Asiática'),
     ('Cocina Italiana'),
-    ('Cocina Mediterránea');
+    ('Cocina Mediterránea'),
+    ('Comida típica Argentina');
 
 -- Restaurantes
 INSERT INTO restaurante (nombre, direccion, clasificacion) 
 VALUES
-    ('La Trattoria', 'Calle de la Rosa 123', 4.2),
-    ('El Bistró Parisien', 'Avenida de los Arcos 456', 4.5),
-    ('Ristorante Bella Italia', 'Plaza del Sol 789', 3.8),
-    ('La Casa del Sabor', 'Calle Principal 234', 4),
-    ('The Garden Grill', 'Avenida de las Flores 567', 4.7),
-    ('Sabor Mexicano', 'Calle de la Luna 890', 3.5),
-    ('Le Petit Café', 'Calle de los Sueños 123', 4.8),
-    ('Taste of India', 'Avenida del Aroma 456', 3.9),
-    ('Mediterranean Delights', 'Paseo de las Palmas 789', 4.1),
-    ('Sushi World', 'Calle del Pescador 234', 4.4),
-    ('La Pizzeria Italiana', 'Avenida del Gusto 567', 4.6),
-    ('Burger Haven', 'Calle de las Hamburguesas 890', 3.7),
-    ('Thai Spice', 'Avenida de los Sabores 123', 4.3),
-    ('Steakhouse Grill', 'Calle de las Carnes 456', 4),
-    ('Fusion Flavors', 'Avenida del Sabor 789', 3.6);
+    ('Sabor Azteca', 'Calle de la Rosa 123', 4.2), -- Mexicana
+    ('La Cantina Picante', 'Avenida de los Arcos 456', 4.5), -- Mexicana
+    ('FastFuel Grill', 'Plaza del Sol 789', 3.8), -- Rápida
+    ('QuickBite Express', 'Calle Principal 234', 4), -- Rápida
+    ('Zen Wok', 'Avenida de las Flores 567', 4.7), -- Asiática
+    ('Sushi World', 'Calle de la Luna 890', 3.5), -- Asiática
+    ('Sakura Sushi House', 'Calle de los Sueños 123', 4.8), -- Asiática
+    ('Bella Napoli Ristorante', 'Avenida del Aroma 456', 3.9), -- Italiana
+    ('La Pizzeria Italiana', 'Avenida del Gusto 567', 4.6), -- Italiana
+    ('Mediterranean Delights', 'Paseo de las Palmas 789', 4.1), -- Mediterranea
+    ('Olive Grove Eats', 'Calle del Pescador 234', 4.4), -- Mediterranea
+    ('Sabores de la Pampa', 'Calle de las Hamburguesas 890', 3.7), -- Argentina
+    ('El Asador Criollo', 'Avenida de los Sabores 123', 4.3), -- Argentina 
+    ('Tango Grill House', 'Avenida del Sabor 789', 3.6); -- Argentina 
 
 -- Cocineros
 INSERT INTO cocinero (dni, nombre, apellido, fecha_ingreso, id_especialidad, id_restaurante)
 VALUES
-    (36706445, 'Juan', 'González', '2010-05-15', 4, 1),
-    (17001982, 'Ana', 'López', '2018-03-20', 2, 2),
-    (32145678, 'Carlos', 'Martínez', '2020-07-10', 1, 3),
-    (23444000, 'Luisa', 'Hernández', '2012-12-05', 3, 4),
-    (38982123, 'Maria', 'Rodríguez', '1999-09-25', 5, 5),
-    (15883228, 'Pedro', 'Sánchez', '2021-02-18', 1, 6),
-    (28992882, 'Sofía', 'Gómez', '2020-11-30', 2, 7),
-    (99229129, 'Andrés', 'Pérez', '2017-04-15', 4, 8),
-    (890123456, 'Laura', 'Fernández', '2022-06-28', 3, 9),
-    (453219876, 'Eduardo', 'Vargas', '2009-08-22', 5, 10),
-    (254321987, 'Isabel', 'Torres', '2020-10-12', 1, 11),
-    (987654321, 'Javier', 'Díaz', '2003-03-03', 2, 12),
-    (321987654, 'Carmen', 'Ruiz', '2015-07-08', 4, 13),
-    (456789123, 'Lorenzo', 'Molina', '2017-01-24', 5, 14),
-    (123456789, 'Rosa', 'Jiménez', '2023-09-14', 3, 15);
+    (36706445, 'Juan', 'González', '2010-05-15', 1, 1), -- Mexicana
+    (17001982, 'Ana', 'López', '2018-03-20', 1, 2), -- Mexicana
+    (32145678, 'John', ' McAll', '2020-07-10', 2, 3), -- Rápida
+    (23444000, 'Denny', 'Pilstone', '2012-12-05', 2, 3), -- Rápida
+    (38982123, 'Maria', 'Rodríguez', '1999-09-25', 2, 4), -- Rápida
+    (15883228, 'Park', 'Jin Su', '2021-02-18', 3, 5), -- Asiática
+    (28992882, 'Joo', 'Ming Yae', '2020-11-30', 3, 6), -- Asiática
+    (99229129, 'Auwi', 'Sarato', '2017-04-15', 3, 7), -- Asiática
+    (890123456, 'Marco', 'Di Lorenzo', '2022-06-28', 4, 8), -- Italiana
+    (453219876, 'Paolo', 'Vieri', '2009-08-22', 4, 9), -- Italiana
+    (254321987, 'Isabel', 'Torres', '2020-10-12', 5, 10), -- Mediterranea
+    (987654321, 'Javier', 'Díaz', '2003-03-03', 5, 11), -- Mediterranea
+    (787564312, 'Mauro', 'Toledo', '2022-08-31', 6, 12), -- Argentina
+    (367654355, 'Lucas', 'Magnano', '2007-11-09', 6, 13), -- Argentina
+    (177654391, 'Federico', 'Pereyra', '2011-4-13', 6, 14); -- Argentina
 
 -- Recetas
 INSERT INTO receta (nombre, descripcion, dificultad, tiempo, dni_cocinero)
 VALUES
-    ('Lasaña de Carne', 'Deliciosa lasaña con carne molida, salsa de tomate y queso', 7, 60, 36706445),
-    ('Coq au Vin', 'Clásico francés de pollo cocido en vino tinto con champiñones y cebollas', 9, 90, 17001982),
-    ('Tacos al Pastor', 'Tacos mexicanos con carne de cerdo adobada, piña y cebolla', 4, 30, 32145678),
-    ('Sushi de Salmón', 'Rolls de sushi con salmón fresco, aguacate y arroz', 8, 45, 23444000),
-    ('Paella Valenciana', 'Plato español de arroz con mariscos, pollo y azafrán', 6, 60, 38982123),
-    ('Guacamole', 'Dip de aguacate, tomate, cebolla y cilantro', 3, 15, 15883228),
-    ('Croissant', 'Clásico pastelito francés hojaldrado', 10, 120, 28992882),
-    ('Tiramisú', 'Postre italiano de café y mascarpone', 5, 45, 99229129),
-    ('Sushi de Salmón', 'Rolls de sushi con salmón fresco, aguacate y arroz', 8, 45, 890123456),
-    ('Moussaka', 'Plato griego de berenjena, carne picada y bechamel', 6, 75, 453219876),
-    ('Chiles en Nogada', 'Plato mexicano de chiles poblanos rellenos de picadillo', 9, 90, 254321987),
-    ('Coq au Vin', 'Clásico francés de pollo cocido en vino tinto con champiñones y cebollas', 9, 90, 987654321),
-    ('Bruschetta', 'Tostadas italianas con tomate, albahaca y aceite de oliva', 3, 20, 321987654),
-    ('Tarta de Manzana', 'Deliciosa tarta de manzana con canela y azúcar', 5, 50, 123456789),
-    ('Pizza de palmitos', 'Deliciosa pizza de palmitos con salsa de tomate y queso derretido', 4, 15, 123456789);
+    ('Tacos al pastor', 'Deliciosa receta con carne de cerdo adobada, piña fresca y cebolla.', 4, 35, 36706445),
+    ('Guacamole', 'Dip de aguacate, tomate, cebolla y cilantro.', 3, 15, 17001982),
+    ('Enchiladas de pollo', 'Deliciosas enchiladas rellenas de pollo, bañadas en salsa de tomate y queso derretido.', 6, 45, 36706445),
+    ('Hamburguesa doble bacon', 'hamburguesa doble con generosas porciones de bacon crujiente, queso derretido y lechuga fresca.', 5, 30, 32145678),
+    ('Wrap de pollo', 'Wrap de pollo deliciosamente sazonado con aderezo especial, relleno de crujiente lechuga.', 3, 15, 23444000),
+    ('Sándwich de ternera', 'Jugoso sándwich de ternera a la parrilla con capas de queso fundido.', 5, 20, 38982123),
+    ('Hot Dogs', 'Salchichas servidas en panecillos y acompañados de salsas y toppings a elección', 3, 15, 32145678),
+    ('Alitas de pollo frito', 'Alitas de pollo sazonadas, preparadas con una mezcla de especias.', 4, 40, 32145678),
+    ('Macarrones con queso', 'Deliciosos macarrones bañados en una cremosa y sabrosa salsa de queso cheddar.', 3, 25, 23444000),
+    ('Sushi de salmón', 'Rolls de sushi rellenos de fresco salmón, aguacate y arroz, envuelto en alga nori.', 8, 45, 15883228),
+    ('Pad Thai de camarones', 'Comida tailandesa con camarones jugosos, fideos de arroz, soja y limón.', 7, 30, 28992882),
+    ('Curry de pollo al estilo tailandés', 'Pollo tailandés con leche de coco, verduras frescas, hierbas aromáticas y especias exóticas.', 8, 45, 28992882),
+    ('Pasta carbonara', 'Clásica pasta italiana con salsa de huevo, queso parmesano, panceta y pimienta negra.', 5, 30, 890123456),
+    ('Risotto de champiñones', 'Cremoso receta preparada con arroz, champiñones, caldo, vino blanco, cebolla y queso parmesano.', 7, 40, 453219876),
+    ('Pizza napolitana', 'Deliciosa opción que resalta los sabores tradicionales de la pizza italiana.', 5, 25, 890123456),
+    ('Lasaña de carne', 'Un plato gratinado al horno que combina sabores y texturas para una experiencia culinaria única.', 7, 60, 453219876),
+    ('Pesto de albahaca con pasta', 'Pasta con una deliciosa salsa pesto de albahaca, ajo, piñones, queso parmesano y aceite de oliva.', 4, 25, 890123456),
+    ('Ensalada griega', 'Ensalada fresca y saludable inspirada en la cocina griega.', 2, 15, 987654321),
+    ('Hummus con pan pita', 'Crema a base de garbanzos, tahini, ajo y limón, servido con pan pita recién horneado.', 3, 20, 254321987),
+    ('Falafel', 'Bolitas de falafel crujientes por fuera y tiernas por dentro, elaboradas con garbanzos.', 4, 40, 254321987),
+    ('Paella', 'Deliciosa paella española con una mezcla de sabores mediterráneos.', 7, 50, 254321987),
+    ('Asado', 'Carnes argentinas que celebran la tradición de la parrilla cocidas a la perfección', 6, 70, 787564312),
+    ('Empanadas criollas', 'Explosión de sabores que capturan la esencia de la cocina criolla. Perfectas para compartir en reuniones familiares', 5, 90, 787564312),
+    ('Milanesa', 'Filetes de carne empanizados y luego fritos hasta obtener una textura dorada y crujiente', 3, 30, 367654355),
+    ('Locro', 'Ideal para disfrutar en días fríos y expecial para festividades patrias y celebraciones familiares', 5, 120, 177654391),
+    ('Provoleta', 'Provolone fundido y dorado hasta que forma una capa dorada y crujiente por fuera', 3, 15, 367654355);
 
 -- Proveedores
 INSERT INTO proveedor
 VALUES
-    (987654, 'Juan', 'Gómez', 'Calle A 123', 555123456, 1),
-    (876543, 'Ana', 'López', 'Avenida B 456', 555234567, 2),
-    (789012, 'Carlos', 'Martínez', 'Calle C 789', 555345678, 3),
-    (654321, 'Luisa', 'Hernández', 'Avenida D 101', 555456789, 6),
-    (567890, 'Maria', 'Rodríguez', 'Calle E 202', 555567890, 10),
-    (678901, 'Pedro', 'Sánchez', 'Avenida F 303', 555678901, 2),
-    (890123, 'Sofía', 'Gómez', 'Calle G 404', 555789012, 7),
-    (901234, 'Andrés', 'Pérez', 'Avenida H 505', 555890123, 6),
-    (345678, 'Laura', 'Fernández', 'Calle I 606', 555901234, 1),
-    (456789, 'Eduardo', 'Vargas', 'Avenida J 707', 555012345, 3),
-    (234567, 'Isabel', 'Torres', 'Calle K 808', 555123456, 10),
-    (543210, 'Javier', 'Díaz', 'Avenida L 909', 555234567, 9),
-    (876210, 'Carmen', 'Ruiz', 'Calle M 1010', 555345678, 6),
-    (678120, 'Lorenzo', 'Molina', 'Avenida N 1111', 555456789, 9),
-    (567801, 'Rosa', 'Jiménez', 'Calle O 1212', 555567890, 4);
+    (987654, 'Juan', 'Gómez', 'Calle A 123', 555123456, 1), -- Carnes
+    (876543, 'Ana', 'López', 'Avenida B 456', 555234567, 1), -- Carnes
+    (789012, 'Carlos', 'Martínez', 'Calle C 789', 555345678, 1), -- Carnes
+    (654321, 'Luisa', 'Hernández', 'Avenida D 101', 555456789, 2), -- Enlatados
+    (567890, 'Maria', 'Rodríguez', 'Calle E 202', 555567890, 3), -- Especies y condimentos
+    (678901, 'Pedro', 'Sánchez', 'Avenida F 303', 555678901, 3), -- Especies y condimentos
+    (890123, 'Sofía', 'Gómez', 'Calle G 404', 555789012, 4), -- Granos
+    (345678, 'Laura', 'Fernández', 'Calle I 606', 555901234, 5), -- Lacteos
+    (456789, 'Eduardo', 'Vargas', 'Avenida J 707', 555012345, 5), -- Lacteos
+    (234567, 'Isabel', 'Torres', 'Calle K 808', 555123456, 6), -- Panaderia
+    (543210, 'Javier', 'Díaz', 'Avenida L 909', 555234567, 7), -- Pastas
+    (876210, 'Carmen', 'Ruiz', 'Calle M 1010', 555345678, 8), -- Salsas
+    (678120, 'Lorenzo', 'Molina', 'Avenida N 1111', 555456789, 9), -- Verduras
+    (901234, 'Andrés', 'Pérez', 'Avenida H 505', 555890123, 9), -- Verduras
+    (567801, 'Rosa', 'Jiménez', 'Calle O 1212', 555567890, 9); -- Verduras
 
 -- Ingredientes
 INSERT INTO ingrediente (precio, nombre, codigo_proveedor)
 VALUES
-    (1327, 'Harina de Trigo', 987654),
-    (6710, 'Aceite de Oliva Extra Virgen', 890123),
-    (6999.99, 'Bola de lomo', 789012),
-    (8500, 'Salmón Ahumado', 901234),
-    (500, 'Tomates', 567890),
-    (2900, 'Levadura', 678901),
-    (300, 'Cebolla', 567890),
-    (2590.99, 'Vino Tinto', 456789),
-    (299.50, 'Ajo', 567890),
-    (4199.49, 'Queso Parmesano', 987654),
-    (1199.50, 'Fideos', 678120),
-    (2400.99, 'Pimientos Rojos', 567890),
-    (4000, 'Pollo', 789012),
-    (670, 'Cebolla de verdeo', 678120),
-    (999.99, 'Calabacines', 567890);
+    (5000, 'Carne de cerdo', 987654),
+    (6999, 'Carne de ternera', 876543),
+    (4999.99, 'Carne molida', 789012),
+    (3099.50, 'Panceta', 987654),
+    (3999, 'Pollo', 876543),
+    (1299.99, 'Salchichas', 789012),
+    (9999, 'Salmon', 789012),
+    (2590.99, 'Camarones', 876543),
+    (3990.50, 'Costilla', 987654),
+    (4199.49, 'Vacío', 987654),
+    (3199.50, 'Chorizo', 789012),
+    (900.99, 'Pepino', 654321),
+    (400, 'Aceitunas', 654321),
+    (670, 'Aderezos', 567890),
+    (100, 'Ajo en polvo', 678901),
+    (1230, 'Chucrut', 567890),
+    (100, 'Pimienta', 678901),
+    (2000, 'Algas Nori', 567890),
+    (1099.99, 'Tahini', 678901),
+    (279.99, 'Comino', 678901),
+    (99, 'Orégano', 567890),
+    (999, 'Arroz', 890123),
+    (599, 'Garbanzo', 890123),
+    (899, 'Crema', 345678),
+    (1399, 'Leche', 456789),
+    (1500, 'Queso', 345678),
+    (500, 'Huevo', 456789),
+    (1000, 'Pan', 234567),
+    (1200, 'Tortillas de maiz', 234567),
+    (999, 'Harina', 234567),
+    (500, 'Pan rallado', 234567),
+    (2000, 'Macarrones', 543210),
+    (800, 'Fideos', 543210),
+    (1999.99, 'Lasaña', 543210),
+    (499, 'Salsa de tomate', 876210),
+    (1300, 'Wasabi', 876210),
+    (200, 'Cebolla', 678120),
+    (299, 'Cebolla de verdeo', 901234),
+    (249.99, 'Lechuga', 567801),
+    (899, 'Palta', 678120),
+    (1299, 'Pimiento', 901234),
+    (489.99, 'Tomate', 567801),
+    (700, 'Berenjena', 678120),
+    (300, 'Albahaca', 901234),
+    (100, 'Ajo', 567801),
+    (900, 'Champiñones', 678120),
+    (189, 'Perejil', 901234),
+    (400, 'Maiz', 567801),
+    (560.50, 'Zapallo', 678120);
 
 -- Relaciones de ingredientes en recetas
 INSERT INTO receta_ingrediente (id_receta, id_ingrediente, cantidad)
 VALUES
-    (1, 1, 100), (1, 2, 50), (1, 3, 200), 
-    (1, 4, 200), (2, 4, 150), (2, 5, 30), 
-    (2, 6, 5), (3, 7, 80), (3, 8, 10), 
-    (3, 9, 120), (4, 10, 25), (4, 11, 40), 
-    (4, 12, 70), (5, 13, 70), (5, 14, 100), 
-    (5, 15, 200), (5, 3, 200), (5, 1, 200),
-    (6, 1, 120), (6, 5, 40), (6, 10, 80),
-    (7, 3, 180), (7, 7, 90), (7, 14, 25),
-    (8, 8, 70), (8, 11, 30), (8, 15, 150),
-    (9, 2, 60), (9, 6, 15), (9, 9, 100),
-    (10, 4, 130), (10, 12, 45), (10, 13, 200),
-    (11, 3, 80), (11, 5, 25), (11, 8, 60),
-    (12, 2, 40), (12, 7, 70), (12, 14, 120),
-    (13, 1, 100), (13, 11, 35), (13, 13, 180),
-    (14, 9, 55), (14, 12, 25), (14, 15, 90),
-    (15, 4, 75), (15, 6, 10), (15, 10, 110);
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%cerdo' LIMIT 1), 500),
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 70),
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%verdeo' LIMIT 1), 20),
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%salsa de tomate%' LIMIT 1), 100),
+    (1, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tortilla%' LIMIT 1), 200),
+    (2, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'palta' LIMIT 1), 300),
+    (2, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 200),
+    (2, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%verdeo' LIMIT 1), 20),
+    (2, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (2, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 10),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pollo' LIMIT 1), 500),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tortilla%' LIMIT 1), 200),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 200),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 150),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'crema' LIMIT 1), 200),
+    (3, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 10),
+	(4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%molida' LIMIT 1), 500),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pan' LIMIT 1), 200),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 200),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'panceta' LIMIT 1), 100),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'lechuga' LIMIT 1), 100),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 200),
+    (4, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 150),
+    (5, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pollo' LIMIT 1), 400),
+    (5, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tortilla%' LIMIT 1), 200),
+    (5, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'lechuga' LIMIT 1), 150),
+    (5, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 200),
+    (5, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'palta' LIMIT 1), 200),
+    (6, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%ternera' LIMIT 1), 300),
+    (6, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pan' LIMIT 1), 500),
+    (6, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 200),
+    (6, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 150),
+    (6, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (7, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'salchichas' LIMIT 1), 100),
+    (7, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pan' LIMIT 1), 200),
+    (7, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'chucrut' LIMIT 1), 30),
+    (7, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'aderezos' LIMIT 1), 10),
+    (8, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pollo' LIMIT 1), 500),
+    (8, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (8, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo en polvo' LIMIT 1), 5),
+    (9, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'macarrones' LIMIT 1), 400),
+    (9, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 250),
+    (9, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'leche' LIMIT 1), 500),
+    (9, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (10, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'salmón' LIMIT 1), 200),
+    (10, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'palta' LIMIT 1), 50),
+    (10, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'wasabi' LIMIT 1), 20),
+    (10, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'algas%' LIMIT 1), 100),
+    (10, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pepino' LIMIT 1), 40),
+    (11, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'camarones' LIMIT 1), 200),
+    (11, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'fideos' LIMIT 1), 200),
+    (11, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (12, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pollo' LIMIT 1), 500),
+    (12, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'leche' LIMIT 1), 400),
+    (12, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 100),
+    (12, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'berenjena' LIMIT 1), 100),
+    (12, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'albahaca' LIMIT 1), 60),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'fideos' LIMIT 1), 400),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'panceta' LIMIT 1), 150),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 100),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'huevo' LIMIT 1), 100),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 20),
+    (13, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'arroz' LIMIT 1), 300),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'champi%' LIMIT 1), 250),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 100),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 20),
+    (14, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (15, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'harina' LIMIT 1), 500),
+    (15, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 400),
+    (15, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'albahaca' LIMIT 1), 10),
+    (15, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 200),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%molida' LIMIT 1), 500),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'lasaña' LIMIT 1), 400),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 40),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 800),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'albahaca' LIMIT 1), 5),
+    (16, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 250),
+    (17, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'albahaca' LIMIT 1), 200),
+    (17, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 100),
+    (17, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 5),
+    (17, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'fideos' LIMIT 1), 400),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 200),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 100),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'aceitunas' LIMIT 1), 50),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 200),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'perejil' LIMIT 1), 100),
+    (18, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (19, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'garbanzo' LIMIT 1), 400),
+    (19, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 50),
+    (19, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pan' LIMIT 1), 200),
+    (19, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tahini' LIMIT 1), 100),
+    (19, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'comino' LIMIT 1), 5),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'garbanzo' LIMIT 1), 300),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 50),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'perejil' LIMIT 1), 50),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'comino' LIMIT 1), 5),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (20, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'harina' LIMIT 1), 50),
+    (21, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'arroz' LIMIT 1), 300),
+    (21, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pollo' LIMIT 1), 200),
+    (21, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 200),
+    (21, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 200),
+    (21, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (22, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%ternera' LIMIT 1), 200),
+    (22, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'costilla' LIMIT 1), 300),
+    (22, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'vacío' LIMIT 1), 300),
+    (22, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 100),
+    (22, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'lechuga' LIMIT 1), 100),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%molida' LIMIT 1), 500),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 400),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 100),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'aceitunas' LIMIT 1), 50),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'huevo' LIMIT 1), 200),
+    (23, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 50),
+    (24, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%ternera' LIMIT 1), 500),
+    (24, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'harina' LIMIT 1), 300),
+    (24, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'huevo' LIMIT 1), 200),
+    (24, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE '%rallado' LIMIT 1), 400),
+    (24, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'maiz' LIMIT 1), 100),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'garbanzo' LIMIT 1), 100),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'zapallo' LIMIT 1), 500),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'chorizo' LIMIT 1), 400),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'cebolla' LIMIT 1), 100),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'ajo' LIMIT 1), 50),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'panceta' LIMIT 1), 100),
+    (25, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'queso' LIMIT 1), 300),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'tomate' LIMIT 1), 100),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimiento' LIMIT 1), 100),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'orégano' LIMIT 1), 5),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pimienta' LIMIT 1), 5),
+    (26, (SELECT id_ingrediente FROM ingrediente WHERE nombre LIKE 'pan' LIMIT 1), 200);
 
 
 
@@ -161,7 +329,7 @@ VALUES
     (123123, 'Natalia', 'Reyes', 'Avenida S 1616', 555567890, 9);
 SAVEPOINT despues_de_insertar_4;
 
-INSERT INTO proveedor (codigo, nombre, apellido, direccion, telefono, id_categoria)
+INSERT INTO proveedor
 VALUES
     (992845, 'Óscar', 'Morales', 'Calle T 1717', 555678901, 1),
     (293454, 'Gloria', 'Ramírez', 'Calle U 1818', 555789012, 7),

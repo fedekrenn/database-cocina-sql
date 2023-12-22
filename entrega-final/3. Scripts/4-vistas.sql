@@ -26,7 +26,7 @@ ON cocinero.id_restaurante = restaurante.id_restaurante
 JOIN receta
 ON cocinero.dni = receta.dni_cocinero
 WHERE tiempo < 30
-ORDER BY cocinero.nombre);
+ORDER BY tiempo);
 
 -- Cocineros que trabajan en los 3 mejores restaurantes
 CREATE OR REPLACE VIEW vw_top_cocineros AS

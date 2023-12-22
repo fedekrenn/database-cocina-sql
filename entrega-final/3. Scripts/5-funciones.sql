@@ -32,5 +32,5 @@ DELIMITER ;
 
 
 /* ----- Pruebas ----- */
--- SELECT fn_cantidad_recetas_cocinero(123456789) AS cantidad_recetas_cocinero;
+-- SELECT fn_cantidad_recetas_cocinero(32145678) AS cantidad_recetas_cocinero;
 -- SELECT fn_calcular_antiguedad(23444000) AS años_antiguedad
