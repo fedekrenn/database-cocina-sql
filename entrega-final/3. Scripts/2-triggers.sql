@@ -9,8 +9,8 @@ AFTER INSERT ON receta_ingrediente
 FOR EACH ROW
 BEGIN
 	UPDATE receta
-    SET cantidad_ingredientes = cantidad_ingredientes + 1
-    WHERE id_receta = NEW.id_receta;
+  SET cantidad_ingredientes = cantidad_ingredientes + 1
+  WHERE id_receta = NEW.id_receta;
 END;
 //
 DELIMITER ;
@@ -22,10 +22,8 @@ AFTER DELETE ON receta_ingrediente
 FOR EACH ROW
 BEGIN
 	UPDATE receta
-    SET cantidad_ingredientes = cantidad_ingredientes - 1
-    WHERE id_receta = OLD.id_receta;
-    -- INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
-    -- VALUES ('DELETE', USER(), CURDATE(), CURTIME());
+  SET cantidad_ingredientes = cantidad_ingredientes - 1
+  WHERE id_receta = OLD.id_receta;
 END;
 //
 DELIMITER ;
@@ -37,8 +35,8 @@ CREATE TRIGGER trg_receta_insert
 AFTER INSERT ON receta
 FOR EACH ROW
 BEGIN
-    INSERT INTO log_receta (operacion, usuario, fecha, hora)
-    VALUES ('INSERT', USER(), CURDATE(), CURTIME());
+  INSERT INTO log_receta (operacion, usuario, fecha, hora)
+  VALUES ('INSERT', USER(), CURDATE(), CURTIME());
 END;
 //
 DELIMITER ;
@@ -50,8 +48,8 @@ CREATE TRIGGER trg_receta_update
 BEFORE UPDATE ON receta
 FOR EACH ROW
 BEGIN
-    INSERT INTO log_receta (operacion, usuario, fecha, hora)
-    VALUES ('UPDATE', USER(), CURDATE(), CURTIME());
+  INSERT INTO log_receta (operacion, usuario, fecha, hora)
+  VALUES ('UPDATE', USER(), CURDATE(), CURTIME());
 END;
 //
 DELIMITER ;
@@ -63,8 +61,8 @@ CREATE TRIGGER trg_cocinero_insert
 AFTER INSERT ON cocinero
 FOR EACH ROW
 BEGIN
-    INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
-    VALUES ('INSERT', USER(), CURDATE(), CURTIME());
+  INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
+  VALUES ('INSERT', USER(), CURDATE(), CURTIME());
 END;
 //
 DELIMITER ;
@@ -76,8 +74,8 @@ CREATE TRIGGER trg_cocinero_update
 BEFORE UPDATE ON cocinero
 FOR EACH ROW
 BEGIN
-    INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
-    VALUES ('UPDATE', USER(), CURDATE(), CURTIME());
+  INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
+  VALUES ('UPDATE', USER(), CURDATE(), CURTIME());
 END;
 //
 DELIMITER ;
@@ -89,8 +87,8 @@ CREATE TRIGGER trg_cocinero_delete
 BEFORE DELETE ON cocinero
 FOR EACH ROW
 BEGIN
-    INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
-    VALUES ('DELETE', USER(), CURDATE(), CURTIME());
+  INSERT INTO log_cocinero (operacion, usuario, fecha, hora)
+  VALUES ('DELETE', USER(), CURDATE(), CURTIME());
 END;
 //
 DELIMITER ;

@@ -81,29 +81,29 @@ ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla que contiene los datos
 -- Tabla para relación Recetas e ingredientes
 CREATE TABLE IF NOT EXISTS receta_ingrediente (
 	id_receta INT NOT NULL COMMENT 'Identificador único de la receta',
-    id_ingrediente INT NOT NULL COMMENT 'Identificador único del ingrediente',
-    cantidad INT NOT NULL COMMENT 'Cantidad de cada ingrediente que lleva la receta',
-    PRIMARY KEY(id_receta, id_ingrediente),
-    CONSTRAINT fk_receta FOREIGN KEY (id_receta) REFERENCES receta(id_receta) ON DELETE CASCADE,
-    CONSTRAINT fk_ingrediente FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id_ingrediente))
-ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla intermedia que relaciona ingredientes con recetas';
+  id_ingrediente INT NOT NULL COMMENT 'Identificador único del ingrediente',
+  cantidad INT NOT NULL COMMENT 'Cantidad de cada ingrediente que lleva la receta',
+  PRIMARY KEY(id_receta, id_ingrediente),
+  CONSTRAINT fk_receta FOREIGN KEY (id_receta) REFERENCES receta(id_receta) ON DELETE CASCADE,
+  CONSTRAINT fk_ingrediente FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id_ingrediente))
+ENNE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla intermedia que relaciona ingredientes con recetas';
 
 -- Tabla de log para la tabla "receta"
 CREATE TABLE IF NOT EXISTS log_receta (
-    id_log INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
-    operacion VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
-    usuario VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
-    fecha DATE NOT NULL COMMENT 'Fecha de la operación',
-    hora TIME NOT NULL COMMENT 'Hora de la operación',
-    PRIMARY KEY (id_log)
+  id_log INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
+  operacion VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
+  usuario VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
+  fecha DATE NOT NULL COMMENT 'Fecha de la operación',
+  hora TIME NOT NULL COMMENT 'Hora de la operación',
+  PRIMARY KEY (id_log)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de log para la tabla receta';
 
 -- Tabla de log para la tabla "cocinero"
 CREATE TABLE IF NOT EXISTS log_cocinero (
-    id_log INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
-    operacion VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
-    usuario VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
-    fecha DATE NOT NULL COMMENT 'Fecha de la operación',
-    hora TIME NOT NULL COMMENT 'Hora de la operación',
-    PRIMARY KEY (id_log)
+  id_log INT NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del registro en el log',
+  operacion VARCHAR(10) NOT NULL COMMENT 'Tipo de operación (INSERT, UPDATE, DELETE, etc.)',
+  usuario VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó la operación',
+  fecha DATE NOT NULL COMMENT 'Fecha de la operación',
+  hora TIME NOT NULL COMMENT 'Hora de la operación',
+  PRIMARY KEY (id_log)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de log para la tabla cocinero';
