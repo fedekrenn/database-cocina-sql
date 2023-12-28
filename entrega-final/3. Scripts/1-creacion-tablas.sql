@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS receta_ingrediente (
   PRIMARY KEY(id_receta, id_ingrediente),
   CONSTRAINT fk_receta FOREIGN KEY (id_receta) REFERENCES receta(id_receta) ON DELETE CASCADE,
   CONSTRAINT fk_ingrediente FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id_ingrediente))
-ENNE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla intermedia que relaciona ingredientes con recetas';
+ENGINE = InnoDB DEFAULT CHARSET = latin1 COMMENT = 'Tabla intermedia que relaciona ingredientes con recetas';
 
 -- Tabla de log para la tabla "receta"
 CREATE TABLE IF NOT EXISTS log_receta (
