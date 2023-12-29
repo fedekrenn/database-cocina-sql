@@ -5,18 +5,18 @@ Para la correcta instalación y configuración de la base de datos deberán corr
 
 
 
-- 1-creacion-tablas
+# 1-creacion-tablas
 
-- 2-triggers
+# 2-triggers
 Creamos los disparadores antes cualquier insersión de datos, tenemos triggers para actualizar la cantidad de ingredientes en las recetas por cada ingrediente que se asocia a la misma y triggers para auditar tablas.
 
-- 3-insercion-datos
+# 3-insercion-datos
 Se corren las consultas para popular las tablas de la DB, en el final de esta tabla se encuentran 2 ejemplos de TCL con savepoints, rollback y commit para emular el comportamiento de volver atras transacciones.
 
-- 4-vistas
+# 4-vistas
 
-- 5-funciones
+# 5-funciones
 
-- 6-stored-procedures
+# 6-stored-procedures
 
-- 7-usuarios
+# 7-usuarios
